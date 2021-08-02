@@ -9,7 +9,9 @@ public class Main {
     public static int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
-        try (Socket clientSocket = new Socket(HOST, PORT); PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
+        try (Socket clientSocket = new Socket(HOST, PORT);
+             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
             out.println("Владислав");
             String resp = in.readLine();
             System.out.println(resp);
